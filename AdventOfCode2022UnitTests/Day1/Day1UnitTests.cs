@@ -2,34 +2,22 @@
 
 namespace AdventOfCode2022.UnitTests;
 
-public class Day1UnitTests
+public class Day1UnitTests : DayUnitTestBase<Day1>
 {
     public Day1UnitTests(ITestOutputHelper testOutputHelper)
+        : base("./Day1/input.txt", testOutputHelper)
     {
-        TestOutputHelper = testOutputHelper;
     }
 
-    public ITestOutputHelper TestOutputHelper { get; }
+    protected override string[] SampleInput1 => Array.Empty<string>();
 
-    [Fact]
-    public void Test1()
-    {
-        var input = File.ReadAllLines("./Day1/input.txt");
-        var day1 = new Day1();
+    protected override string[] SampleInput2 => Array.Empty<string>();
 
-        var maxCalories = day1.Process1(input);
+    protected override int? Sample1Answer => null;
 
-        TestOutputHelper.WriteLine($"maxCalories: {maxCalories}");
-    }
+    protected override int? Sample2Answer => null;
 
-    [Fact]
-    public void Test2()
-    {
-        var input = File.ReadAllLines("./Day1/input.txt");
-        var day1 = new Day1();
+    protected override int? Process1Answer => 68442;
 
-        var maxCalories = day1.Process2(input);
-
-        TestOutputHelper.WriteLine($"top 3: {maxCalories}");
-    }
+    protected override int? Process2Answer => 204837;
 }

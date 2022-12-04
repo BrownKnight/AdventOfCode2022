@@ -1,7 +1,7 @@
 ﻿using System;
 namespace AdventOfCode2022
 {
-	public class Day1
+	public class Day1 : IDay
 	{
 		public int Process1(string[] inputs)
 		{

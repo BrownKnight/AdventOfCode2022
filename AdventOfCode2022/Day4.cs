@@ -1,7 +1,7 @@
 ﻿using System;
 namespace AdventOfCode2022
 {
-	public class Day4
+	public class Day4 : IDay
 	{
 		public Day4()
 		{

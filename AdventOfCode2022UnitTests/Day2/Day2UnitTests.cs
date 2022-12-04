@@ -2,66 +2,22 @@
 
 namespace AdventOfCode2022.UnitTests;
 
-public class Day2UnitTests
+public class Day2UnitTests : DayUnitTestBase<Day2>
 {
     public Day2UnitTests(ITestOutputHelper testOutputHelper)
+        : base("./Day2/input.txt", testOutputHelper)
     {
-        TestOutputHelper = testOutputHelper;
     }
 
-    public ITestOutputHelper TestOutputHelper { get; }
+    protected override string[] SampleInput1 => Array.Empty<string>();
 
-    [Fact]
-    public void Sample2()
-    {
-        var input = new[]
-        {
-            "A Y",
-            "B X",
-            "C Z"
-        };
-        var day2 = new Day2();
+    protected override string[] SampleInput2 => Array.Empty<string>();
 
-        var player2Score = day2.Process2(input);
+    protected override int? Sample1Answer => null;
 
-        TestOutputHelper.WriteLine($"sample player 2 score: {player2Score}");
-    }
+    protected override int? Sample2Answer => null;
 
-    [Fact]
-    public void Test2()
-    {
-        var input = File.ReadAllLines("./Day2/input.txt");
-        var day2 = new Day2();
+    protected override int? Process1Answer => null;
 
-        var player2Score = day2.Process2(input);
-
-        TestOutputHelper.WriteLine($"player 2 score: {player2Score}");
-    }
-
-    [Fact]
-    public void Sample()
-    {
-        var input = new[]
-        {
-            "A Y",
-            "B X",
-            "C Z"
-        };
-        var day2 = new Day2();
-
-        var result = day2.Process1(input);
-
-        TestOutputHelper.WriteLine($"result: {result}");
-    }
-
-    [Fact]
-    public void Test1()
-    {
-        var input = File.ReadAllLines("./Day2/input.txt");
-        var day2 = new Day2();
-
-        var result = day2.Process1(input);
-
-        TestOutputHelper.WriteLine($"result: {result}");
-    }
+    protected override int? Process2Answer => null;
 }
