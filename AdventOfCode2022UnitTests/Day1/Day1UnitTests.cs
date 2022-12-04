@@ -1,6 +1,5 @@
-﻿using Xunit.Abstractions;
-
 namespace AdventOfCode2022.UnitTests;
+using Xunit.Abstractions;
 
 public class Day1UnitTests : DayUnitTestBase<Day1>
 {
