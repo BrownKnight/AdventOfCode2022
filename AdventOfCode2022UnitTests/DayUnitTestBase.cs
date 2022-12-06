@@ -1,7 +1,8 @@
 namespace AdventOfCode2022.UnitTests;
 using Xunit.Abstractions;
 
-public abstract class DayUnitTestBase<TDay> where TDay : IDay, new()
+public abstract class DayUnitTestBase<TDay, TResult>
+    where TDay : IDay<TResult>, new()
 {
     private readonly string inputPath;
 
@@ -16,10 +17,10 @@ public abstract class DayUnitTestBase<TDay> where TDay : IDay, new()
     protected abstract string[] SampleInput1 { get; }
     protected abstract string[] SampleInput2 { get; }
 
-    protected abstract int? Sample1Answer { get; }
-    protected abstract int? Sample2Answer { get; }
-    protected abstract int? Process1Answer { get; }
-    protected abstract int? Process2Answer { get; }
+    protected abstract TResult? Sample1Answer { get; }
+    protected abstract TResult? Sample2Answer { get; }
+    protected abstract TResult? Process1Answer { get; }
+    protected abstract TResult? Process2Answer { get; }
 
     [Fact]
     public void Sample1()

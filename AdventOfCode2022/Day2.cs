@@ -1,12 +1,12 @@
 namespace AdventOfCode2022;
 
-public class Day2 : IDay
+public class Day2 : IDay<int?>
 {
     public Day2()
     {
     }
 
-    public int Process1(string[] inputs)
+    public int? Process1(string[] inputs)
     {
         var player1Score = 0;
         var player2Score = 0;
@@ -42,7 +42,7 @@ public class Day2 : IDay
         return player2Score;
     }
 
-    public int Process2(string[] inputs)
+    public int? Process2(string[] inputs)
     {
         var player2Score = 0;
 

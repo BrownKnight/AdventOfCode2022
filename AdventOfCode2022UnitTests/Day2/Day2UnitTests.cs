@@ -1,7 +1,7 @@
 namespace AdventOfCode2022.UnitTests;
 using Xunit.Abstractions;
 
-public class Day2UnitTests : DayUnitTestBase<Day2>
+public class Day2UnitTests : DayUnitTestBase<Day2, int?>
 {
     public Day2UnitTests(ITestOutputHelper testOutputHelper)
         : base("./Day2/input.txt", testOutputHelper)

@@ -1,9 +1,9 @@
 namespace AdventOfCode2022;
 
-public interface IDay
+public interface IDay<TResult>
 {
-    public int Process1(string[] inputs);
+    public TResult Process1(string[] inputs);
 
-    public int Process2(string[] inputs);
+    public TResult Process2(string[] inputs);
 }
 

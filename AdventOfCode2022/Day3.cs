@@ -1,12 +1,12 @@
 namespace AdventOfCode2022;
 
-public class Day3 : IDay
+public class Day3 : IDay<int?>
 {
     public Day3()
     {
     }
 
-    public int Process1(string[] inputs)
+    public int? Process1(string[] inputs)
     {
         var prioritySum = 0;
 
@@ -27,7 +27,7 @@ public class Day3 : IDay
         return prioritySum;
     }
 
-    public int Process2(string[] inputs)
+    public int? Process2(string[] inputs)
     {
         var prioritySum = 0;
 

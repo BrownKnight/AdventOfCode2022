@@ -1,12 +1,12 @@
 namespace AdventOfCode2022;
 
-public class Day4 : IDay
+public class Day4 : IDay<int?>
 {
     public Day4()
     {
     }
 
-    public int Process1(string[] inputs)
+    public int? Process1(string[] inputs)
     {
         var fullyContainedCount = 0;
 
@@ -30,7 +30,7 @@ public class Day4 : IDay
         return fullyContainedCount;
     }
 
-    public int Process2(string[] inputs)
+    public int? Process2(string[] inputs)
     {
         var overlaps = 0;
 

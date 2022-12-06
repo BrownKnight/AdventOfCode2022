@@ -1,8 +1,8 @@
 namespace AdventOfCode2022;
 
-public class Day1 : IDay
+public class Day1 : IDay<int?>
 {
-    public int Process1(string[] inputs)
+    public int? Process1(string[] inputs)
     {
         var elfs = new Stack<int>();
         // Add first elf
@@ -24,7 +24,7 @@ public class Day1 : IDay
         return elfs.Max();
     }
 
-    public int Process2(string[] inputs)
+    public int? Process2(string[] inputs)
     {
         var elfs = new Stack<int>();
         // Add first elf

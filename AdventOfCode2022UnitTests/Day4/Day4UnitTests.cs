@@ -1,7 +1,7 @@
 namespace AdventOfCode2022.UnitTests;
 using Xunit.Abstractions;
 
-public class Day4UnitTests : DayUnitTestBase<Day4>
+public class Day4UnitTests : DayUnitTestBase<Day4, int?>
 {
     protected override string[] SampleInput1 => new[]
         {
