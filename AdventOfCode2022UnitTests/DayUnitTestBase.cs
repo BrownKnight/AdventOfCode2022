@@ -39,7 +39,7 @@ public abstract class DayUnitTestBase<TDay, TResult>
     public void Sample2()
     {
         var day = new TDay();
-        var result = day.Process2(this.SampleInput1);
+        var result = day.Process2(this.SampleInput2);
         this.TestOutputHelper.WriteLine($"Result: {result}");
 
         if (this.Sample2Answer is not null)
