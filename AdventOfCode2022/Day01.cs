@@ -1,6 +1,6 @@
 namespace AdventOfCode2022;
 
-public class Day1 : IDay<int?>
+public class Day01 : IDay<int?>
 {
     public int? Process1(string[] inputs)
     {

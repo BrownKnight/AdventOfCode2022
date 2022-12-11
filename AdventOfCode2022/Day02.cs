@@ -1,8 +1,8 @@
 namespace AdventOfCode2022;
 
-public class Day2 : IDay<int?>
+public class Day02 : IDay<int?>
 {
-    public Day2()
+    public Day02()
     {
     }
 

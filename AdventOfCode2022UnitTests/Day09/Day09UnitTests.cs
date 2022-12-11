@@ -3,10 +3,10 @@ using Xunit.Abstractions;
 
 namespace AdventOfCode2022.UnitTests
 {
-    public class Day9UnitTests : DayUnitTestBase<Day9, int?>
+    public class Day09UnitTests : DayUnitTestBase<Day09, int?>
     {
-        public Day9UnitTests(ITestOutputHelper testOutputHelper)
-            : base("./Day9/input.txt", testOutputHelper)
+        public Day09UnitTests(ITestOutputHelper testOutputHelper)
+            : base("./Day09/input.txt", testOutputHelper)
         {
         }
 

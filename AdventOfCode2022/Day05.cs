@@ -2,10 +2,10 @@ namespace AdventOfCode2022;
 
 using System.Text.RegularExpressions;
 
-public class Day5 : IDay<string>
+public class Day05 : IDay<string>
 {
     private static readonly string MoveInstructionRegex = @"move (\d+) from (\d+) to (\d+)";
-    public Day5()
+    public Day05()
     {
     }
 

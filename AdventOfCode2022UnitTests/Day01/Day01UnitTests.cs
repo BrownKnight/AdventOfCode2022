@@ -1,10 +1,10 @@
 namespace AdventOfCode2022.UnitTests;
 using Xunit.Abstractions;
 
-public class Day2UnitTests : DayUnitTestBase<Day2, int?>
+public class Day01UnitTests : DayUnitTestBase<Day01, int?>
 {
-    public Day2UnitTests(ITestOutputHelper testOutputHelper)
-        : base("./Day2/input.txt", testOutputHelper)
+    public Day01UnitTests(ITestOutputHelper testOutputHelper)
+        : base("./Day01/input.txt", testOutputHelper)
     {
     }
 
@@ -16,7 +16,7 @@ public class Day2UnitTests : DayUnitTestBase<Day2, int?>
 
     protected override int? Sample2Answer => null;
 
-    protected override int? Process1Answer => null;
+    protected override int? Process1Answer => 68442;
 
-    protected override int? Process2Answer => null;
+    protected override int? Process2Answer => 204837;
 }

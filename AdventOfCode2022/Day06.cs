@@ -2,9 +2,9 @@ namespace AdventOfCode2022;
 
 using System.Text.RegularExpressions;
 
-public class Day6 : IDay<int?>
+public class Day06 : IDay<int?>
 {
-    public Day6()
+    public Day06()
     {
     }
 
