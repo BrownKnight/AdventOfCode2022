@@ -18,14 +18,8 @@
 		<ProjectReference Include="..\AdventOfCode2022\AdventOfCode2022.csproj" />
 	</ItemGroup>
 	<ItemGroup>
-	  <None Remove="Day11\" />
-	</ItemGroup>
-	<ItemGroup>
 		<None Update="*/*.txt">
 			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
 		</None>
-	</ItemGroup>
-	<ItemGroup>
-	  <Folder Include="Day11\" />
 	</ItemGroup>
 </Project>

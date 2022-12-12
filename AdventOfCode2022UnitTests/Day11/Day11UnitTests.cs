@@ -3,7 +3,7 @@ using Xunit.Abstractions;
 
 namespace AdventOfCode2022.UnitTests
 {
-    public class Day11UnitTests : DayUnitTestBase<Day11, int?>
+    public class Day11UnitTests : DayUnitTestBase<Day11, long?>
     {
         public Day11UnitTests(ITestOutputHelper testOutputHelper)
             : base("./Day11/input.txt", testOutputHelper)
@@ -41,15 +41,15 @@ namespace AdventOfCode2022.UnitTests
             "    If false: throw to monkey 1"
         };
 
-        protected override string[] SampleInput2 => throw new NotImplementedException();
+        protected override string[] SampleInput2 => SampleInput1;
 
-        protected override int? Sample1Answer => 10605;
+        protected override long? Sample1Answer => 10605;
 
-        protected override int? Sample2Answer => throw new NotImplementedException();
+        protected override long? Sample2Answer => 2713310158;
 
-        protected override int? Process1Answer => throw new NotImplementedException();
+        protected override long? Process1Answer => null;
 
-        protected override int? Process2Answer => throw new NotImplementedException();
+        protected override long? Process2Answer => null;
     }
 }
 

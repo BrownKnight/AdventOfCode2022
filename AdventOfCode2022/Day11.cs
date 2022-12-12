@@ -3,13 +3,39 @@ using System.Text.RegularExpressions;
 
 namespace AdventOfCode2022
 {
-    public class Day11 : IDay<int?>
+    public class Day11 : IDay<long?>
     {
         public Day11()
         {
         }
 
-        public int? Process1(string[] inputs)
+        public long? Process1(string[] inputs)
+        {
+            var monkeys = GetMonkeysFromInput(inputs);
+
+            for (int round = 0; round < 20; round++)
+            {
+                foreach (var monkey in monkeys)
+                {
+                    while (monkey.Items.Any())
+                    {
+                        monkey.Inspections++;
+                        var itemWorryLevel = monkey.Items.Dequeue();
+                        // rumn the operation on the item
+                        itemWorryLevel = monkey.Operation!(itemWorryLevel);
+                        itemWorryLevel = itemWorryLevel / 3;
+                        var newMonkeyNumber = monkey.Test!(itemWorryLevel);
+
+                        monkeys[newMonkeyNumber].Items.Enqueue(itemWorryLevel);
+                    }
+                }
+            }
+            var monkeyInspections = monkeys.Select(x => x.Inspections);
+
+            return monkeyInspections.OrderDescending().ElementAt(0) * monkeyInspections.OrderDescending().ElementAt(1);
+        }
+
+        private List<Monkey> GetMonkeysFromInput(string[] inputs)
         {
             var monkeys = new List<Monkey>();
             for (var i = 0; i < inputs.Length; i++)
@@ -48,7 +74,7 @@ namespace AdventOfCode2022
                 }
             }
 
-            return 0;
+            return monkeys;
         }
 
         private class Monkey
@@ -56,6 +82,7 @@ namespace AdventOfCode2022
             public Queue<int> Items { get; } = new();
             public Func<int, int>? Operation { get; set; }
             public Func<int, int>? Test { get; set; }
+            public long Inspections { get; set; }
         }
 
         private Func<int, int> GetOperation(string left, string op, string right) =>
@@ -72,7 +99,30 @@ namespace AdventOfCode2022
                 };
             };
 
-        public int? Process2(string[] inputs) => throw new NotImplementedException();
+        public long? Process2(string[] inputs)
+        {
+            var monkeys = GetMonkeysFromInput(inputs);
+
+            for (int round = 0; round < 20; round++)
+            {
+                foreach (var monkey in monkeys)
+                {
+                    while (monkey.Items.Any())
+                    {
+                        monkey.Inspections++;
+                        var itemWorryLevel = monkey.Items.Dequeue();
+                        // rumn the operation on the item
+                        itemWorryLevel = monkey.Operation!(itemWorryLevel);
+                        var newMonkeyNumber = monkey.Test!(itemWorryLevel);
+
+                        monkeys[newMonkeyNumber].Items.Enqueue(itemWorryLevel);
+                    }
+                }
+            }
+            var monkeyInspections = monkeys.Select(x => x.Inspections);
+
+            return monkeyInspections.OrderDescending().ElementAt(0) * monkeyInspections.OrderDescending().ElementAt(1);
+        }
     }
 }
 
