@@ -67,7 +67,7 @@ namespace AdventOfCode2022
                     var divisableBy = Regex.Match(input, @"(\d+)").Groups[0].Value;
                     var ifTrue = Regex.Match(inputs[++i], @"(\d+)").Groups[0].Value;
                     var ifFalse = Regex.Match(inputs[++i], @"(\d+)").Groups[0].Value;
-
+                    monkeys.Last().Divisor = int.Parse(divisableBy);
                     monkeys.Last().Test = (val) => val % int.Parse(divisableBy) == 0
                         ? int.Parse(ifTrue)
                         : int.Parse(ifFalse);
@@ -79,13 +79,14 @@ namespace AdventOfCode2022
 
         private class Monkey
         {
-            public Queue<int> Items { get; } = new();
-            public Func<int, int>? Operation { get; set; }
-            public Func<int, int>? Test { get; set; }
+            public Queue<long> Items { get; } = new();
+            public Func<long, long>? Operation { get; set; }
+            public Func<long, int>? Test { get; set; }
+            public int? Divisor { get; set; }
             public long Inspections { get; set; }
         }
 
-        private Func<int, int> GetOperation(string left, string op, string right) =>
+        private Func<long, long> GetOperation(string left, string op, string right) =>
             (old) =>
             {
                 var leftVal = left == "old" ? old : int.Parse(left);
@@ -102,8 +103,8 @@ namespace AdventOfCode2022
         public long? Process2(string[] inputs)
         {
             var monkeys = GetMonkeysFromInput(inputs);
-
-            for (int round = 0; round < 20; round++)
+            var divisor = monkeys.Select(x => x.Divisor).Aggregate((curr, agg) => curr * agg);
+            for (int round = 0; round < 10000; round++)
             {
                 foreach (var monkey in monkeys)
                 {
@@ -111,8 +112,9 @@ namespace AdventOfCode2022
                     {
                         monkey.Inspections++;
                         var itemWorryLevel = monkey.Items.Dequeue();
-                        // rumn the operation on the item
+                        // run the operation on the item
                         itemWorryLevel = monkey.Operation!(itemWorryLevel);
+                        itemWorryLevel = itemWorryLevel % divisor!.Value;
                         var newMonkeyNumber = monkey.Test!(itemWorryLevel);
 
                         monkeys[newMonkeyNumber].Items.Enqueue(itemWorryLevel);
